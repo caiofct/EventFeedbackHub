@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event: one
+  user_name: User1
+  rating: 1
+  comment: MyText
+
+two:
+  event: two
+  user_name: User2
+  rating: 2
+  comment: MyText
