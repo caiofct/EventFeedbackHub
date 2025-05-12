@@ -1,0 +1,19 @@
+<%= turbo_frame_tag dom_id(feedback) do %>
+  <div class="bg-white rounded-lg shadow p-4 mb-6">
+    <div class="flex justify-between items-start">
+      <div class="font-medium"><%= feedback.user_name %></div>
+      <div class="text-yellow-500">
+        <%= "★" * feedback.rating %><%= "☆" * (5 - feedback.rating) %>
+      </div>
+    </div>
+    <div class="text-sm text-gray-500 mb-2">
+      <%= feedback.event.name %>
+    </div>
+
+    <p class="text-gray-600 mb-2"><%= feedback.comment %></p>
+
+    <div class="text-sm text-gray-400">
+      <%= time_ago_in_words(feedback.created_at) %> ago
+    </div>
+  </div>
+<% end %>
