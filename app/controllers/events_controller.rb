@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  PER_PAGE = 10
+  PER_PAGE = 12
 
   def index
     @feedbacks = Feedback.includes(:event).all
