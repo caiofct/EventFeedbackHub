@@ -4,9 +4,7 @@ class EventsController < ApplicationController
   def index
     @feedbacks = Feedback.includes(:event).all
     @feedbacks = @feedbacks.joins(:event).where(feedbacks: { event: params[:event_id] }) if params[:event_id].present?
-    if params[:rating].present?
-      @feedbacks = @feedbacks.where(feedbacks: { rating: params[:rating] })
-    end
+    @feedbacks = @feedbacks.where(feedbacks: { rating: params[:rating] }) if params[:rating].present?
 
     @feedbacks = @feedbacks.order(created_at: :desc).page(params[:page]).per(PER_PAGE)
   end
