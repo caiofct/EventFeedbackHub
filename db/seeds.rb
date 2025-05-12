@@ -28,7 +28,7 @@ events.each do |event_data|
 
   rand(3..6).times do
     event.feedbacks.create!(
-      user_name: ["Alice", "Bob", "Charlie", "Diana", "Eve"].sample,
+      user_name: %w[Alice Bob Charlie Diana Eve].sample,
       rating: rand(3..5),
       comment: [
         "Great event! Learned a lot.",
